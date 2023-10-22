@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600&family=Exo:wght@200&display=swap');
+:root{
+  --light: whitesmoke;
+  --main: rgb(134, 16, 219);
+  --contrast: #d3d3d3ac;
+  --shadow:  rgba(186, 33, 233, 0.993);
+  --highlight: #fab9feb6;
+  --dark: #1f1e1e;
+  --tabletbg:#ee82ee;
+  --mobilebg:#ffc0cb;;
+  --defaultbg: rgb(164, 116, 199);
+
+
+}
+
+*{
+  margin: 0;
+  padding:0;
+}
+
+body {
+  background-color: var(--defaultbg);
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: 'Exo 2', sans-serif;
+}
+
+#calculator {
+  display: grid;
+  grid-template-areas:  
+  "display display display display"
+  "clear negative percentage divide"
+  "seven eight nine multiply"
+  "four five six subtract"
+  "one two three add"
+  "zero zero decimal equals";
+  grid-template-columns: 100px 100px 100px 100px;
+  gap: 20px;
+  padding: 50px;
+  padding-top: 35px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 55px;
+  border: solid indigo 10px;
+  background-color: var(--main);
+}
+
+
+
+
+#answer {
+  font-size: 40px;
+  height: 48px;
+  align-self: center;
+  justify-self: center;
+  margin: 15px 15px -30px 15px;
+  padding:10px 15px 10px 10px;
+  word-break: break-all;
+  background-color: rgb(51, 6, 83);
+  border-radius: 5px;
+}
+
+#expression {
+  font-family: 'Exo', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  height: 80px;
+  color:  var(--contrast);
+  margin: 25px 15px 25px 15px;
+  padding: 25px 15px 5px 10px;
+  background-color: rgb(51, 6, 83);
+  word-break: break-all;
+  border-radius: 5px;
+
+}
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-o-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes flickerAnimation{
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}
+
+.limit{
+    color: rgb(245, 51, 2);
+    -webkit-animation: flickerAnimation 1s infinite;
+   -moz-animation: flickerAnimation 1s infinite;
+   -o-animation: flickerAnimation 1s infinite;
+    animation: flickerAnimation 1s infinite;
+}
+
+
+
+.cal-button {
+  background-color: var(--contrast);
+  font-family: 'Exo 2', sans-serif;
+}
+
+.light {
+  background-color: var(--highlight);
+
+}
+
+.operand {
+  background-color: var(--shadow);
+}
+
+
+button {
+  height: 100px;
+  width: 100px;
+  font-size: 25px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform o.2s ease-in-out;
+  color: rgb(255, 255, 255);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#zero{
+  width: 220px;
+  border-radius: 40px;
+  
+
+}
+
+
+#display{
+  grid-area: display;
+}
+
+
+#clear {
+  grid-area: clear;
+}
+
+#negative {
+  grid-area: negative;
+}
+
+#percentage {
+  grid-area: percentage;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+
+#six {
+  grid-area: six;
+}
+
+#subtract {
+  grid-area: subtract;
+}
+
+
+#one  {
+  grid-area: one;
+}
+
+#two  {
+  grid-area: two;
+}
+
+#three  {
+  grid-area: three;
+}
+
+#add  {
+  grid-area: add;
+}
+
+#zero  {
+  grid-area: zero;
+}
+
+
+#decimal  {
+  grid-area: decimal;
+}
+
+#equals  {
+  grid-area: equals;
+}
+
+
+@media (max-width: 768px) {
+
+body{
+  background-color: #ffc0cb;
+  height: 100%;
+
+}
+
+  .container{
+    height: 100%;
+    margin: auto;
+   
+
+  }
+  
+  h1 {
+    margin:30px;
+    font-size: 30px; /* Adjust the font size for smaller screens */
+  }
+
+  #calculator {
+    grid-template-columns: repeat(2, 1fr); /* Adjust the grid for smaller screens */
+    gap: 10px; /* Reduce the gap between buttons */
+    padding: 20px; /* Reduce padding */
+    padding-top: 15px;
+    margin: 10px;
+
+  }
+
+  #answer {
+    font-size: 35px;
+    height: 40px;
+    margin: 15px 15px -30px 15px;
+    padding: 10px 15px 10px 10px;
+    background-color: rgb(51, 6, 83);
+    border-radius: 5px;
+    word-break: break-all; 
+  }
+
+
+  #expression {
+    font-size: 20px;
+    font-weight: bold;
+    height: 80px;
+    margin: 25px 15px 25px 15px;
+    padding: 25px 15px 5px 10px;
+    background-color: rgb(51, 6, 83);
+    border-radius: 5px;
+    word-break: break-all; 
+  }
+
+
+  
+
+  
+
+  
+
+  button {
+    height: 80px; /* Adjust button size for smaller screens */
+    width: 80px;
+    font-size: 25px; /* Adjust button font size */
+  }
+
+  #zero {
+    width: 180px; /* Adjust zero button width */
+  }
+
+ 
+ 
+  
+  
+   
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  body{
+    background-color: #ee82ee;
+    height: 100%;
+    width: 100%;
+    padding-bottom:40px;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin: 15px;
+   
+  }
+
+
+
+  .container {
+    height: 100%;
+    
+     /* Adjust the height for tablets */
+  }
+
+  
+  #answer {
+    font-size: 36px;
+    height: 48px;
+    align-self: center;
+    justify-self: center;
+    margin: 15px 15px -30px 15px;
+    padding: 10px 15px 10px 10px;
+    border-radius: 5px;
+    word-break: break-all; 
+  }
+
+  #expression {
+    height: 80px;
+    margin: 25px 15px 25px 15px;
+    padding: 25px 15px 5px 10px;
+    border-radius: 5px;
+    word-break: break-all;
+  
+  }
+
+  #calculator {
+    grid-template-columns: repeat(4, 1fr); /* Adjust grid columns for tablets */
+    gap: 15px; /* Adjust gap for tablets */
+    padding: 20px; /* Adjust padding for tablets */
+    padding-top: 15px; /* Adjust top padding for tablets */
+    margin-top: 10px; /* Adjust top margin for tablets */
+    border-radius: 20px; /* Adjust border radius for tablets */
+  }
+
+  button {
+    height: 80px; /* Adjust button height for tablets */
+    width: 80px; /* Adjust button width for tablets */
+    font-size: 20px; /* Adjust font size for tablets */
+  }
+
+  #zero {
+    width: 180px; /* Adjust width for the zero button for tablets */
+    border-radius: 30px; /* Adjust border radius for tablets */
+  }
+
+ 
+}
